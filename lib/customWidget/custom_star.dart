@@ -15,7 +15,7 @@ class StarCustom extends StatelessWidget {
             Icon(Icons.star,color: Colors.white,),
             Icon(Icons.star,color: Colors.white,),
           ]),
-      Center(child: Text("index",style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),))]
+      Center(child: Text("index task 1",style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),))]
     );
   }
 }
