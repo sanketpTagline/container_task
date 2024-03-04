@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:sanket/customWidget/custom_circle.dart';
 import 'package:sanket/customWidget/custom_star.dart';
 import 'package:sanket/customWidget/one.dart';
 import 'package:sanket/customWidget/two.dart';
 
 class ThreeContainer extends StatelessWidget {
-  const ThreeContainer({super.key});
+  int index;
+   ThreeContainer({super.key,required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -13,18 +15,20 @@ class ThreeContainer extends StatelessWidget {
     return SizedBox(
       height:(height - ( height*.10)) ,
       width: width,
-      child: Column(
+      child: Stack(
         children: [
-          Expanded(
+          Column(
+            children: [
+              Expanded(
 
-            child: Container(
-              height: (height - ( height*.10)) ,
-              color: Colors.red,
+                child: Container(
+                  height: (height - ( height*.10)) ,
+                  color: Colors.red,
 
-              child: const StarCustom(),
-            ),
-          ),
-          Expanded(
+                  child:   StarCustom(index: index+1),
+                ),
+              ),
+              Expanded(
                 child: SizedBox(
                   height: (height - ( height*.10)) *.50,
                   // color: Colors.red,
@@ -35,7 +39,7 @@ class ThreeContainer extends StatelessWidget {
                           height: (height - ( height*.10)) *.50,
                           width: width*.5,
                           color: Colors.blue,
-                          child: const StarCustom(),
+                          child: StarCustom(index: index+2),
                         ),
                       ),
                       SizedBox(
@@ -48,7 +52,7 @@ class ThreeContainer extends StatelessWidget {
                               height: (height - ( height*.10)) *.250,
                               color: Colors.green,
 
-                              child: const StarCustom(),
+                              child: StarCustom(index: index+3),
                             ),
                           ),
 
@@ -59,6 +63,9 @@ class ThreeContainer extends StatelessWidget {
                   ),
                 ),
               ),
+            ],
+          ),
+          const Center(child: CircleCustom()),
         ],
       ),
     );

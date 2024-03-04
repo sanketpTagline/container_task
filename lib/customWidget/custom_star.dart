@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class StarCustom extends StatelessWidget {
-  const StarCustom({super.key});
+  int index;
+   StarCustom({super.key,required this.index});
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(alignment: Alignment.bottomRight, children: [
-      Row(
+    return  Stack(alignment: Alignment.bottomRight, children: [
+      const Row(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -25,8 +26,8 @@ class StarCustom extends StatelessWidget {
           ]),
       Center(
           child: Text(
-        "0",
-        style: TextStyle(
+        "$index",
+        style: const TextStyle(
             color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
       ))
     ]);
