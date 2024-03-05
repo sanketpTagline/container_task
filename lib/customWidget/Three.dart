@@ -5,8 +5,8 @@ import 'package:sanket/customWidget/one.dart';
 import 'package:sanket/customWidget/two.dart';
 
 class ThreeContainer extends StatelessWidget {
-  int index;
-   ThreeContainer({super.key,required this.index});
+ final int index;
+  const  ThreeContainer({super.key,required this.index});
 
   @override
   Widget build(BuildContext context) {

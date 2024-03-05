@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sanket/calculation.dart';
 
 class HomeScreen extends StatefulWidget {
-int length;
-   HomeScreen( {super.key, required this.length,});
+final int length;
+  const HomeScreen( {super.key, required this.length,});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -22,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
           height: height * .10,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
+            itemCount: 100,
             itemBuilder: (context, index) {
               return Container(
                 width: 50,
@@ -41,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: SingleChildScrollView(
               child: Column(
                           children: [
-              Calculation(leng: widget.length),
+              ContainerCal(leng: widget.length),
                           ],
                         )),
         ),

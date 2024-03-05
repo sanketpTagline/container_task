@@ -4,9 +4,9 @@ import 'package:sanket/customWidget/Three.dart';
 import 'package:sanket/customWidget/one.dart';
 import 'package:sanket/customWidget/two.dart';
 
-class Calculation extends StatelessWidget {
-  int leng;
-  Calculation({super.key, required this.leng});
+class ContainerCal extends StatelessWidget {
+ final int leng;
+  const ContainerCal({super.key, required this.leng});
 
   @override
   Widget build(BuildContext context) {
