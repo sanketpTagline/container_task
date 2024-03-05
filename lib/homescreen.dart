@@ -1,5 +1,11 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:sanket/calculation.dart';
+import 'package:sanket/customWidget/Four.dart';
+import 'package:sanket/customWidget/Three.dart';
+import 'package:sanket/customWidget/one.dart';
+import 'package:sanket/customWidget/two.dart';
 
 class HomeScreen extends StatefulWidget {
 final int length;
@@ -40,13 +46,49 @@ class _HomeScreenState extends State<HomeScreen> {
           width: width,
           color: Colors.purple,
           child: SingleChildScrollView(
-              child: Column(
-                          children: [
-              ContainerCal(leng: widget.length),
-                          ],
-                        )),
+            child: Column(
+
+              children: [
+                ListView.builder(
+                  physics:const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  padding: EdgeInsets.zero,
+                  itemCount: (widget.length~/4),
+                  itemBuilder: (context, index) {
+
+                return FourContainer(index: (4*index));
+                },),
+                ListView.builder(
+                  padding: EdgeInsets.zero,
+                  physics:const NeverScrollableScrollPhysics(),
+
+                shrinkWrap: true,
+                  itemCount: 1,
+                  itemBuilder: (context, index) {
+                    return widget.length%4 ==1?OneContainer(index:(widget.length~/4)*4+index ):
+                        widget.length%4 ==2 ?TwoContainer(index: (widget.length~/4)*4+index):
+                        widget.length%4 ==3 ?ThreeContainer(index: (widget.length~/4)*4+index):const SizedBox();
+
+                },),
+              ],
+            ),
+          ),
         ),
       ]),
     );
   }
 }
+
+
+
+
+
+
+/*
+child: SingleChildScrollView(
+              child: Column(
+                          children: [
+              // ContainerCal(leng: widget.length),
+                          ],
+                        )),
+ */
